@@ -89,7 +89,7 @@ public class TriggerAnim : MonoBehaviour
         {
             levelSelector.transform.localScale = Vector3.Lerp(levelSelector.transform.localScale, Vector3.zero, 0.1f);
         }
-        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (isHovering ? 3f : 1f), 0.1f);
+        // transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (isHovering ? 3f : 1f), 0.1f);
 
     }
 }
