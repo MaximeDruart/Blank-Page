@@ -10,11 +10,35 @@ public class SceneController : Singleton<SceneController>
 
     // Start is called before the first frame update
 
+    AsyncOperation async;
 
-    public void OpenScene(string scene, LoadSceneMode mode = LoadSceneMode.Additive)
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // called second
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        Debug.Log(mode);
+    }
+
+
+    IEnumerator OpenScene(string scene, LoadSceneMode mode = LoadSceneMode.Additive)
     {
 
-        SceneManager.LoadSceneAsync(scene, mode);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene, mode);
+        // Wait until the asynchronous scene fully loads
+        asyncLoad.allowSceneActivation = false;
+        while (asyncLoad.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+
+        asyncLoad.allowSceneActivation = true;
     }
 
     public void CloseScene(string scene)
@@ -23,11 +47,11 @@ public class SceneController : Singleton<SceneController>
     }
 
 
-    public void GoToScene(char choice)
+    public void GoToScene(int choice)
     {
         activeSceneIndex++;
         Debug.Log($"opening Scene{activeSceneIndex}-{choice}");
-        OpenScene($"Scene{activeSceneIndex}-{choice}");
+        StartCoroutine(OpenScene($"Scene{activeSceneIndex}-{choice}"));
     }
 
 }

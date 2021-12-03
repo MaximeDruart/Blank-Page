@@ -14,6 +14,11 @@ public class TriggerAnim : MonoBehaviour
 
     Collider objectCollider;
     int id;
+
+    public TriggerData triggerData;
+
+    public delegate void ClickAction();
+    public static event ClickAction OnClicked;
     void Start()
     {
         startPosition = transform.localPosition;
@@ -32,9 +37,20 @@ public class TriggerAnim : MonoBehaviour
         transform.localPosition = position;
     }
 
-    void Hide()
+    void GoToNext()
     {
+        // get the tag's last letter (either trigger-1 or trigger-2 so 1 or 2)
+        int choice = triggerData.choiceIndex;
+        // load the scene 'Scene{activeSceneIndex}-{choice}'
+        SceneController.Instance.GoToScene(choice);
+        isHidden = true;
 
+
+        if (triggerData.levelParent == 1)
+        {
+            if (OnClicked != null)
+                OnClicked();
+        }
     }
 
 
@@ -59,13 +75,7 @@ public class TriggerAnim : MonoBehaviour
 
             if (objectIsHit && Input.GetButtonDown("Fire1"))
             {
-                // get the tag's last letter (either trigger-1 or trigger-2 so 1 or 2)
-                char choice = tag[tag.Length - 1];
-                // load the scene 'Scene{activeSceneIndex}-{choice}'
-                SceneController.Instance.GoToScene(choice);
-                isHidden = true;
-
-
+                GoToNext();
             }
         }
         else isHovering = false;
