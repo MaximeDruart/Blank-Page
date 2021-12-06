@@ -9,3 +9,6 @@ public class TriggerData : ScriptableObject
     public int levelParent;
     public int choiceIndex;
 }
+
+
+

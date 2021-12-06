@@ -12,19 +12,19 @@ public class HideBaseLight : MonoBehaviour
 
     void OnEnable()
     {
-        TriggerAnim.OnClicked += Hide;
+        // TriggerAnim.OnClicked += Hide;
         Debug.Log("adding it");
     }
     void OnDisable()
     {
-        TriggerAnim.OnClicked -= Hide;
+        // TriggerAnim.OnClicked -= Hide;
     }
 
     void Hide()
     {
         Debug.Log("playnig it");
         baseLight.DOIntensity(0f, 3f);
-        TriggerAnim.OnClicked -= Hide;
+        // TriggerAnim.OnClicked -= Hide;
     }
 
 }

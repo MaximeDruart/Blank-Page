@@ -5,6 +5,10 @@ public class TriggerAnim : MonoBehaviour
 {
 
 
+
+    public GameEvent activeGameEvent;
+    public GameEvent nextGameEvent;
+
     public Transform levelSelector;
 
     Vector3 startPosition;
@@ -17,8 +21,6 @@ public class TriggerAnim : MonoBehaviour
 
     public TriggerData triggerData;
 
-    public delegate void ClickAction();
-    public static event ClickAction OnClicked;
     void Start()
     {
         startPosition = transform.localPosition;
@@ -41,16 +43,16 @@ public class TriggerAnim : MonoBehaviour
     {
         // get the tag's last letter (either trigger-1 or trigger-2 so 1 or 2)
         int choice = triggerData.choiceIndex;
-        // load the scene 'Scene{activeSceneIndex}-{choice}'
-        SceneController.Instance.GoToScene(choice);
+        activeGameEvent.close();
+
+        SceneController.Instance.activeSceneIndex++;
+        // choice should be 0 or 1
+        SceneController.Instance.choice = choice - 1;
+
+        nextGameEvent.open();
+
         isHidden = true;
 
-
-        if (triggerData.levelParent == 1)
-        {
-            if (OnClicked != null)
-                OnClicked();
-        }
     }
 
 
