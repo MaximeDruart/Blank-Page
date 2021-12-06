@@ -30,11 +30,8 @@ public class prefabLoader : MonoBehaviour
 
     public void LoadPrefab()
     {
-        // Instantiate(prefabs[SceneController.Instance.activeSceneIndex][SceneController.Instance.choice], new Vector3(0, 0, 0), Quaternion.identity);
-        Debug.Log(SceneController.Instance.activeSceneIndex);
-        Debug.Log(SceneController.Instance.choice);
-        Instantiate(prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice], new Vector3(0, 0, 0), Quaternion.identity);
-
+        GameObject prefab = prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice];
+        Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
 
