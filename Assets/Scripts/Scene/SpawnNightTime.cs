@@ -10,7 +10,7 @@ public class SpawnNightTime : MonoBehaviour
     [SerializeField] Light moon;
     void Start()
     {
-        Debug.Log("starting light transition");
+        // Debug.Log("starting light transition");
     }
 
     // Update is called once per frame

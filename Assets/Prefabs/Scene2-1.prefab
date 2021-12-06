@@ -171,6 +171,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6495805182669656511}
   - component: {fileID: 6495805182669656508}
+  - component: {fileID: 5539650424901432090}
+  - component: {fileID: 6899634699849194172}
   m_Layer: 0
   m_Name: DaySceneVolume
   m_TagString: Untagged
@@ -209,6 +211,30 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1bc7242b8ad58f0478c85e1d143178e0, type: 2}
+--- !u!114 &5539650424901432090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495805182669656510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc336f10b83bd74eaded16a658275c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6899634699849194172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495805182669656510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72735549fa2eda747ad907f81f641486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6495805182811589576
 GameObject:
   m_ObjectHideFlags: 0

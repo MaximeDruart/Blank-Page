@@ -12,12 +12,14 @@ public class prefabLoader : MonoBehaviour
     public GameEvent sceneTwoOne;
     public GameEvent sceneTwoTwo;
     public GameEvent sceneThreeOne;
+    public GameEvent sceneThreeTwo;
     public GameObject basePrefab;
     public GameObject sceneOneOnePrefab;
     public GameObject sceneOneTwoPrefab;
     public GameObject sceneTwoOnePrefab;
     public GameObject sceneTwoTwoPrefab;
     public GameObject sceneThreeOnePrefab;
+    public GameObject sceneThreeTwoPrefab;
 
     List<GameObject> prefabs = new List<GameObject>();
     List<GameEvent> gameEvents = new List<GameEvent>();
@@ -40,17 +42,19 @@ public class prefabLoader : MonoBehaviour
     void Awake()
     {
 
-        GameEvent[] gameEventsTemp = { baseScene, sceneOneOne, sceneOneTwo, sceneTwoOne, sceneTwoTwo };
+        GameEvent[] gameEventsTemp = { baseScene, sceneOneOne, sceneOneTwo, sceneTwoOne, sceneTwoTwo, sceneThreeOne, sceneThreeTwo };
 
         gameEvents.AddRange(gameEventsTemp);
 
-        GameObject[] prefabsTemp = { basePrefab, sceneOneOnePrefab, sceneOneTwoPrefab, sceneTwoOnePrefab, sceneTwoTwoPrefab };
+        GameObject[] prefabsTemp = { basePrefab, sceneOneOnePrefab, sceneOneTwoPrefab, sceneTwoOnePrefab, sceneTwoTwoPrefab, sceneThreeOnePrefab, sceneThreeTwoPrefab };
 
         // GameObject[,] prefabsTemp = new GameObject[,,] {
         //     {basePrefab},
         //     {sceneOneOnePrefab, sceneOneTwoPrefab},
         //     {sceneTwoOnePrefab, sceneTwoTwoPrefab},
         // }
+
+        //hashtable
 
         prefabs.AddRange(prefabsTemp);
 

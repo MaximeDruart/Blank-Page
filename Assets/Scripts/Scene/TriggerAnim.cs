@@ -24,7 +24,6 @@ public class TriggerAnim : MonoBehaviour
     void Start()
     {
         startPosition = transform.localPosition;
-        Debug.Log("started");
 
         objectCollider = GetComponent<Collider>();
 

@@ -13,10 +13,8 @@ public class GameEvent : ScriptableObject
 
     public void open()
     {
-        Debug.Log(onOpen);
         if (onOpen != null)
         {
-            Debug.Log("starting open function");
             onOpen();
         }
     }
@@ -30,12 +28,4 @@ public class GameEvent : ScriptableObject
     }
 
 
-    public void test2()
-    {
-        Debug.Log("hely");
-    }
-    public void test()
-    {
-        onOpen += test2;
-    }
 }
