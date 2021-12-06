@@ -11,6 +11,8 @@ public class MainController : MonoBehaviour
     void Start()
     {
         baseScene.open();
+        SceneController.Instance.activeSceneIndex++;
+
     }
 
     // Update is called once per frame

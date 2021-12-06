@@ -579,12 +579,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2410709345107748551, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3067338728864973878, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: triggerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0404c447d505bc840aa52a221ecf494e, type: 2}
+    - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: nextGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: ed9258e7d0dea0f498f38bce3d699083, type: 2}
+    - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: activeGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 82553e82bd229794ab7c2f9b0ef828bb, type: 2}
     - target: {fileID: 3458637119504990584, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -597,6 +609,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4522172957009523285, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: triggerData
+      value: 
+      objectReference: {fileID: 11400000, guid: de57a54fcd4ef3d429f809c21c875880, type: 2}
+    - target: {fileID: 4522172957009523285, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: nextGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: dd6aa60aceedc434cb1762b0e1030394, type: 2}
+    - target: {fileID: 4522172957009523285, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: activeGameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 82553e82bd229794ab7c2f9b0ef828bb, type: 2}
     - target: {fileID: 6670473111184812980, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: m_RootOrder
       value: 1

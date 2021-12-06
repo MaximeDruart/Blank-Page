@@ -11,11 +11,13 @@ public class prefabLoader : MonoBehaviour
     public GameEvent sceneOneTwo;
     public GameEvent sceneTwoOne;
     public GameEvent sceneTwoTwo;
+    public GameEvent sceneThreeOne;
     public GameObject basePrefab;
     public GameObject sceneOneOnePrefab;
     public GameObject sceneOneTwoPrefab;
     public GameObject sceneTwoOnePrefab;
     public GameObject sceneTwoTwoPrefab;
+    public GameObject sceneThreeOnePrefab;
 
     List<GameObject> prefabs = new List<GameObject>();
     List<GameEvent> gameEvents = new List<GameEvent>();
@@ -27,7 +29,8 @@ public class prefabLoader : MonoBehaviour
     public void LoadPrefab()
     {
         // Instantiate(prefabs[SceneController.Instance.activeSceneIndex][SceneController.Instance.choice], new Vector3(0, 0, 0), Quaternion.identity);
-        Debug.Log(SceneController.Instance.activeSceneIndex + SceneController.Instance.choice);
+        Debug.Log(SceneController.Instance.activeSceneIndex);
+        Debug.Log(SceneController.Instance.choice);
         Instantiate(prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice], new Vector3(0, 0, 0), Quaternion.identity);
 
     }

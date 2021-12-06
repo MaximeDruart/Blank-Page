@@ -45,12 +45,12 @@ public class TriggerAnim : MonoBehaviour
         int choice = triggerData.choiceIndex;
         activeGameEvent.close();
 
-        SceneController.Instance.activeSceneIndex++;
         // choice should be 0 or 1
         SceneController.Instance.choice = choice - 1;
 
         nextGameEvent.open();
 
+        SceneController.Instance.activeSceneIndex += 2;
         isHidden = true;
 
     }
