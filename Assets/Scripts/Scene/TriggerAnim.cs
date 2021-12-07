@@ -89,6 +89,7 @@ public class TriggerAnim : MonoBehaviour
         if (isHidden)
         {
             levelSelector.transform.localScale = Vector3.Lerp(levelSelector.transform.localScale, Vector3.zero, 0.1f);
+            Destroy (levelSelector.gameObject);
         }
         // transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (isHovering ? 3f : 1f), 0.1f);
 

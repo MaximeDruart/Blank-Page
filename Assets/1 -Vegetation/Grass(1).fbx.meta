@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 36e3f248fe980b549b49db9b78836171
+guid: 1fde978fe5aecd548811afc6af990bf1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,15 +7,10 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light Wood.003
-    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+      name: No Name
+    second: {fileID: 2100000, guid: d9a631ea99c980640af05eac233f973d, type: 2}
   materials:
-    materialImportMode: 2
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
