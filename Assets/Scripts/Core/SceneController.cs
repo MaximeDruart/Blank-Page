@@ -8,5 +8,7 @@ public class SceneController : Singleton<SceneController>
 
     public int activeSceneIndex = 0;
     public int choice = 0;
+    public GameObject character;
+
 
 }

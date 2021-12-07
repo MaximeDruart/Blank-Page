@@ -8,23 +8,23 @@ public class TriggerAnim : MonoBehaviour
 
     public GameEvent activeGameEvent;
     public GameEvent nextGameEvent;
-
     public Transform levelSelector;
 
-    Vector3 startPosition;
     // Start is called before the first frame update
-    bool isHovering = false;
     bool isHidden = false;
 
     Collider objectCollider;
     int id;
 
     public TriggerData triggerData;
+    public GameObject triggerRadius;
+    public GameObject triggerModel;
+
+    float rotX = 0;
+    float rotY = 0;
 
     void Start()
     {
-        startPosition = transform.localPosition;
-
         objectCollider = GetComponent<Collider>();
 
         id = GetInstanceID();
@@ -33,9 +33,10 @@ public class TriggerAnim : MonoBehaviour
 
     void FloatAnim()
     {
-        Vector3 position = transform.localPosition;
-        position.y = startPosition.y + Mathf.Sin(Time.time * 5) * 0.5f;
-        transform.localPosition = position;
+        rotX += Time.deltaTime * 5f;
+        rotY -= Time.deltaTime * 5f;
+
+        triggerModel.transform.localRotation = Quaternion.Euler(rotX, 0, rotY);
     }
 
     void GoToNext()
@@ -50,7 +51,6 @@ public class TriggerAnim : MonoBehaviour
         nextGameEvent.open();
 
         SceneController.Instance.activeSceneIndex += 2;
-        isHidden = true;
 
     }
 
@@ -61,26 +61,20 @@ public class TriggerAnim : MonoBehaviour
     {
         FloatAnim();
 
-        // send ray from the center of cam to where you're looking at
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+
+        if (SceneController.Instance.character != null)
         {
+            float distanceToCenter = Vector3.Distance(transform.position, SceneController.Instance.character.transform.position);
 
-            // assign scriptableobject to game object and get data thtough there
-            // hit.collider.gameObject.GetComponent<TriggerData>().choiceIndex;
-            // check if hit item is current game object
-            bool objectIsHit = hit.collider.GetInstanceID() == objectCollider.GetInstanceID();
-            isHovering = objectIsHit;
-
-            if (objectIsHit && Input.GetButtonDown("Fire1"))
+            if (distanceToCenter < 10 && !isHidden)
             {
                 GoToNext();
-            }
-        }
-        else isHovering = false;
+                isHidden = true;
 
+            }
+
+        }
 
     }
 
@@ -88,10 +82,8 @@ public class TriggerAnim : MonoBehaviour
     {
         if (isHidden)
         {
-            levelSelector.transform.localScale = Vector3.Lerp(levelSelector.transform.localScale, Vector3.zero, 0.1f);
-            Destroy (levelSelector.gameObject);
+            Destroy(levelSelector.gameObject);
         }
-        // transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (isHovering ? 3f : 1f), 0.1f);
 
     }
 }

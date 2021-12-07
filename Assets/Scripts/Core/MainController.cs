@@ -7,6 +7,7 @@ public class MainController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameEvent baseScene;
+    public CharacterController character;
 
     void Start()
     {
