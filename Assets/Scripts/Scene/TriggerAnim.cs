@@ -10,8 +10,10 @@ public class TriggerAnim : MonoBehaviour
     public GameEvent nextGameEvent;
     public Transform levelSelector;
 
+    public Transform lucioles;
+
     // Start is called before the first frame update
-    bool isHidden = false;
+    bool isDisabled = false;
 
     Collider objectCollider;
     int id;
@@ -65,22 +67,26 @@ public class TriggerAnim : MonoBehaviour
         {
             float distanceToCenter = Vector3.Distance(transform.position, SceneController.Instance.character.transform.position);
 
-            if (distanceToCenter < 10 && !isHidden)
+            if (distanceToCenter < 5 && !isDisabled)
             {
+                isDisabled = true;
                 GoToNext();
-                isHidden = true;
+
+                int index = transform.GetSiblingIndex();
+
+                // assuming it's always a 2-way choice, we can just take the opposite value
+
+                index = index == 1 ? 0 : 1;
+
+
+                Destroy(levelSelector.GetChild(index).gameObject);
+                triggerRadius.SetActive(false);
+
+                lucioles.gameObject.SetActive(false);
+
 
             }
 
-        }
-
-    }
-
-    void FixedUpdate()
-    {
-        if (isHidden)
-        {
-            Destroy(levelSelector.gameObject);
         }
 
     }
