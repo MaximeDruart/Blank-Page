@@ -1,9 +1,69 @@
 fileFormatVersion: 2
-guid: 4d689e4bc2a9e6a43aebff25abee2bac
+guid: e928d9f970719c848acc1915e35c2f04
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood.012
+    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood.013
+    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood.014
+    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood.015
+    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dark Wood.016
+    second: {fileID: 2100000, guid: d1872502af8f8a94293fd2d581ac4385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves.034
+    second: {fileID: 2100000, guid: 68bdf49eafe4429479cd70b4ad66a50f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves.035
+    second: {fileID: 2100000, guid: 68bdf49eafe4429479cd70b4ad66a50f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves.036
+    second: {fileID: 2100000, guid: 68bdf49eafe4429479cd70b4ad66a50f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.027
+    second: {fileID: 2100000, guid: c3fd262775937764e98eccaf82d67fb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.028
+    second: {fileID: 2100000, guid: c3fd262775937764e98eccaf82d67fb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.029
+    second: {fileID: 2100000, guid: c3fd262775937764e98eccaf82d67fb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock.030
+    second: {fileID: 2100000, guid: c3fd262775937764e98eccaf82d67fb5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
