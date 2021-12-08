@@ -13,6 +13,11 @@ public class prefabLoader : MonoBehaviour
     public GameEvent sceneTwoTwo;
     public GameEvent sceneThreeOne;
     public GameEvent sceneThreeTwo;
+    public GameEvent sceneFourOne;
+    public GameEvent sceneFourTwo;
+    public GameEvent sceneFiveOne;
+    public GameEvent sceneFiveTwo;
+
     public GameObject basePrefab;
     public GameObject sceneOneOnePrefab;
     public GameObject sceneOneTwoPrefab;
@@ -20,6 +25,10 @@ public class prefabLoader : MonoBehaviour
     public GameObject sceneTwoTwoPrefab;
     public GameObject sceneThreeOnePrefab;
     public GameObject sceneThreeTwoPrefab;
+    public GameObject sceneFourOnePrefab;
+    public GameObject sceneFourTwoPrefab;
+    public GameObject sceneFiveOnePrefab;
+    public GameObject sceneFiveTwoPrefab;
 
     List<GameObject> prefabs = new List<GameObject>();
     List<GameEvent> gameEvents = new List<GameEvent>();
@@ -30,7 +39,11 @@ public class prefabLoader : MonoBehaviour
 
     public void LoadPrefab()
     {
+
         GameObject prefab = prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice];
+
+        Debug.Log("instantiating" + prefab.name);
+
         Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
@@ -39,21 +52,18 @@ public class prefabLoader : MonoBehaviour
     void Awake()
     {
 
-        GameEvent[] gameEventsTemp = { baseScene, sceneOneOne, sceneOneTwo, sceneTwoOne, sceneTwoTwo, sceneThreeOne, sceneThreeTwo };
+        GameEvent[] gameEventsTemp = { baseScene, sceneOneOne, sceneOneTwo, sceneTwoOne, sceneTwoTwo, sceneThreeOne, sceneThreeTwo, sceneFourOne, sceneFourTwo, sceneFiveOne, sceneFiveTwo };
 
         gameEvents.AddRange(gameEventsTemp);
 
-        GameObject[] prefabsTemp = { basePrefab, sceneOneOnePrefab, sceneOneTwoPrefab, sceneTwoOnePrefab, sceneTwoTwoPrefab, sceneThreeOnePrefab, sceneThreeTwoPrefab };
 
-        // GameObject[,] prefabsTemp = new GameObject[,,] {
-        //     {basePrefab},
-        //     {sceneOneOnePrefab, sceneOneTwoPrefab},
-        //     {sceneTwoOnePrefab, sceneTwoTwoPrefab},
-        // }
 
-        //hashtable
+        GameObject[] prefabsTemp = { basePrefab, sceneOneOnePrefab, sceneOneTwoPrefab, sceneTwoOnePrefab, sceneTwoTwoPrefab, sceneThreeOnePrefab, sceneThreeTwoPrefab, sceneFourOnePrefab, sceneFourTwoPrefab, sceneFiveOnePrefab, sceneFiveTwoPrefab };
 
         prefabs.AddRange(prefabsTemp);
+
+        Debug.Log(gameEventsTemp.Length);
+        Debug.Log(prefabsTemp.Length);
 
         for (int i = 0; i < gameEventsTemp.Length; i++)
         {

@@ -102,7 +102,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 61e8ddd276e3eb34697c51203e62ce56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 53e98dc8307efb34780156c95728c9c2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -113,7 +113,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 150
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7122,7 +7122,7 @@ PrefabInstance:
     - target: {fileID: 4522172957009523285, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: triggerData
       value: 
-      objectReference: {fileID: 11400000, guid: 80b1bc052b39ded4b8c28aea40347cc5, type: 2}
+      objectReference: {fileID: 11400000, guid: bc49b7d030be6554ba37a0447378a704, type: 2}
     - target: {fileID: 4522172957009523285, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: nextGameEvent
       value: 

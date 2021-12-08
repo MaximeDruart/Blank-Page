@@ -15,6 +15,7 @@ public class AnimateLighting : MonoBehaviour
     [SerializeField] GameEvent baseEvent;
     [SerializeField] GameEvent dayEvent;
     [SerializeField] GameEvent nightEvent;
+    [SerializeField] GameEvent rainEvent;
 
     [SerializeField] GameObject baseVolumeContainer;
     [SerializeField] GameObject postVolumeContainer;
@@ -35,14 +36,15 @@ public class AnimateLighting : MonoBehaviour
         // ANIMATE SATURATION
         sequence.Append(DOTween.To(() => colorAdjustments.saturation.value, x => colorAdjustments.saturation.value = x, 0, 2));
 
+
         // ANIMATE TEMPERATURE
-        float targetTemperature = -20f;
+        float targetTemperature = -40f;
 
         sequence.Join(DOTween.To(() => whiteBalance.temperature.value, x => whiteBalance.temperature.value = x, targetTemperature, 3));
 
 
         // ANIMATE DIRECTIONAL LIGHT INTENSITY
-        float targetIntensity = 2420f;
+        float targetIntensity = 1200f;
         sequence.Join(DOTween.To(() => hdLight.intensity, x => hdLight.intensity = x, targetIntensity, 2));
 
         // ANIMATE DIRECTIONAL LIGHT COLOR
@@ -57,6 +59,8 @@ public class AnimateLighting : MonoBehaviour
             })
         );
 
+        // big lag transitioning exposure, need to find a workaorund
+
         // float startExposure = sky.exposure.value;
         // float targetExposure = 0;
         // float exp = startExposure;
@@ -69,16 +73,18 @@ public class AnimateLighting : MonoBehaviour
         // );
 
         // ANIMATE SPACE MAP : INCREASE SPACE EMISSION MULTIPLIER
-        float targetSpaceMult = 500f;
+        float targetSpaceMult = 300f;
         float startMult = 0;
 
         sequence.Append(
-            DOTween.To(() => startMult, x => startMult = x, targetSpaceMult, 7).OnUpdate(() =>
+            DOTween.To(() => startMult, x => startMult = x, targetSpaceMult, 4).OnUpdate(() =>
             {
                 sky.spaceEmissionMultiplier.value = startMult;
 
             })
         );
+
+        sequence.Join(DOTween.To(() => colorAdjustments.postExposure.value, x => colorAdjustments.postExposure.value = x, -0.7f, 2));
 
     }
 
@@ -126,13 +132,51 @@ public class AnimateLighting : MonoBehaviour
         sequence.Join(baseLight.transform.DORotate(targetRotation, 5));
     }
 
-
     void spaceRotationLoop()
     {
         Vector3 rot = sky.spaceRotation.value;
         rot.z += Time.deltaTime * 0.5f;
         sky.spaceRotation.value = rot;
     }
+
+    void startRain()
+    {
+
+        Sequence sequence = DOTween.Sequence();
+
+        float startMult = sky.spaceEmissionMultiplier.value;
+        float targetSpaceMult = 0f;
+
+        sequence.Append(
+            DOTween.To(() => startMult, x => startMult = x, targetSpaceMult, 1.5f).OnUpdate(() =>
+            {
+                sky.spaceEmissionMultiplier.value = startMult;
+
+            })
+        );
+
+        sequence.Join(DOTween.To(() => colorAdjustments.saturation.value, x => colorAdjustments.saturation.value = x, -20, 2));
+
+        Color color = Color.white;
+
+        float greyValue = 1f;
+
+
+        sequence.Join(
+            DOTween.To(() => greyValue, x => greyValue = x, 0.9f, 2f).OnUpdate(() =>
+            {
+
+                color.r = greyValue;
+                color.g = greyValue;
+                color.b = greyValue;
+
+                colorAdjustments.colorFilter.value = color;
+
+            })
+        );
+
+    }
+
 
     void Start()
     {
@@ -162,6 +206,7 @@ public class AnimateLighting : MonoBehaviour
 
         dayEvent.onOpen += startDay;
         nightEvent.onOpen += startNight;
+        rainEvent.onOpen += startRain;
     }
 
 

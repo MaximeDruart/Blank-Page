@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbb9e840620f56459c00a2ef67746ab, type: 3}
   m_Name: Scene3-2 bat2
   m_EditorClassIdentifier: 
-  levelParent: 0
-  choiceIndex: 0
+  levelParent: 3
+  choiceIndex: 2
