@@ -67,7 +67,7 @@ public class TriggerAnim : MonoBehaviour
         {
             float distanceToCenter = Vector3.Distance(transform.position, SceneController.Instance.character.transform.position);
 
-            if (distanceToCenter < 2 && !isDisabled)
+            if (distanceToCenter < 5 && !isDisabled)
             {
                 isDisabled = true;
                 GoToNext();
