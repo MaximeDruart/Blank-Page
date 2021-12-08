@@ -13,18 +13,22 @@ public class SpawnForest : MonoBehaviour
     void Start()
     {
 
+        // GameObject[] childWithRenderers;
+
         // foreach (Transform child in vegetation)
         // {
-        //     child.GetComponent<Renderer>().material.DOFade(0, 0);
-        // }
-
-        // {
-        //     foreach (Transform child in vegetation)
+        //     if (!child.GetComponent<Renderer>() == null)
         //     {
-        //         child.GetComponent<Renderer>().material.DOFade(1, 2).SetDelay(Random.Range(0, 5));
+        //         child.child
         //     }
-
+        //     child.GetComponent<Renderer>().material.DOFade(1, 2).SetDelay(Random.Range(0, 5));
         // }
+
+
+    }
+
+    void getChildrensWithRenderer()
+    {
 
     }
 

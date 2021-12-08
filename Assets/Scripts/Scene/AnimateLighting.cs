@@ -57,9 +57,9 @@ public class AnimateLighting : MonoBehaviour
             })
         );
 
-        float startExposure = sky.exposure.value;
-        float targetExposure = 0;
-        float exp = startExposure;
+        // float startExposure = sky.exposure.value;
+        // float targetExposure = 0;
+        // float exp = startExposure;
 
         // sequence.Join(
         //     DOTween.To(() => exp, x => exp = x, targetExposure, 2).OnUpdate(() =>
@@ -69,7 +69,7 @@ public class AnimateLighting : MonoBehaviour
         // );
 
         // ANIMATE SPACE MAP : INCREASE SPACE EMISSION MULTIPLIER
-        float targetSpaceMult = 1000f;
+        float targetSpaceMult = 500f;
         float startMult = 0;
 
         sequence.Append(
