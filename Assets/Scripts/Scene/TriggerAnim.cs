@@ -59,9 +59,7 @@ public class TriggerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FloatAnim();
-
-
+        // FloatAnim();
 
         if (SceneController.Instance.character != null)
         {
