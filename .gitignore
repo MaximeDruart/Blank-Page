@@ -14,6 +14,7 @@
 # Gradle cache directory
 .gradle/
 
+UserSettings
 Assets/Plugins
 Assets/Plugins/DOTween
 Assets/Plugins/DOTween.meta
