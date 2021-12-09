@@ -8,6 +8,9 @@ using DG.Tweening;
 /// </summary>
 public class SimpleGrabSystem : MonoBehaviour
 {
+
+    public GameEvent baseScene;
+
     // Reference to the character camera.
     [SerializeField]
     private Camera characterCamera;
@@ -101,11 +104,50 @@ public class SimpleGrabSystem : MonoBehaviour
         item.Rb.isKinematic = false;
         // Add force to throw item a little bit
         item.Rb.AddForce(item.transform.forward * 2, ForceMode.VelocityChange);
+
+        Reset();
     }
 
     void Reset()
     {
         Debug.Log("reset");
+        StartCoroutine(RemoveItems());
+    }
+
+    IEnumerator RemoveItems()
+    {
+
+        // Debug.Log(SceneController.Instance.prefabContainer.transform.childCount);
+        // foreach (Transform item in SceneController.Instance.prefabContainer.transform)
+        // {
+        //     Debug.Log(item.gameObject.name);
+        //     SceneController.Instance.prefabContainer.transform.Destroy(item.gameObject);
+        //     yield return new WaitForSeconds(.08f);
+        // }
+
+        int childrens = SceneController.Instance.prefabContainer.transform.childCount;
+        for (int i = childrens - 1; i > 0; i--)
+        {
+            int innerChildrens = SceneController.Instance.prefabContainer.transform.GetChild(i).childCount;
+            for (int j = innerChildrens - 1; j > 0; j--)
+            {
+                GameObject.Destroy(SceneController.Instance.prefabContainer.transform.GetChild(i).GetChild(j).gameObject);
+                yield return new WaitForSeconds(.3f);
+            }
+
+            GameObject.Destroy(SceneController.Instance.prefabContainer.transform.GetChild(i).gameObject);
+        }
+
+
+        Destroy(SceneController.Instance.prefabContainer.transform.GetChild(0).gameObject);
+        SceneController.Instance.activeSceneIndex = 0;
+        SceneController.Instance.choice = 0;
+
+        baseScene.open();
+        SceneController.Instance.activeSceneIndex++;
+
+
+
     }
 
     private void StartEnd(PickableItem item)
@@ -120,30 +162,25 @@ public class SimpleGrabSystem : MonoBehaviour
         List<string> selectedTexts = new List<string>();
 
         List<int> choices = SceneController.Instance.choiceHistory;
-        // List<int> choices = new List<int>();
-        // choices.Add(2);
-        // choices.Add(2);
-        // choices.Add(1);
-        // choices.Add(2);
-        // choices.Add(0);
+
 
         // DESERT/FORET + JOUR/NUIT
-        if (choices[0] == 2 && choices[1] == 2)
+        if (choices[0] == 1 && choices[1] == 1)
         {
             selectedAudios.Add(audio1[0]);
             selectedTexts.Add("Soir dans la foret");
         }
-        if (choices[0] == 1 && choices[1] == 2)
+        if (choices[0] == 0 && choices[1] == 1)
         {
             selectedAudios.Add(audio1[1]);
             selectedTexts.Add("Soir dans le desert");
         }
-        if (choices[0] == 2 && choices[1] == 1)
+        if (choices[0] == 1 && choices[1] == 0)
         {
             selectedAudios.Add(audio1[2]);
             selectedTexts.Add("Aube dans la foret");
         }
-        if (choices[0] == 1 && choices[1] == 1)
+        if (choices[0] == 0 && choices[1] == 0)
         {
             selectedAudios.Add(audio1[3]);
             selectedTexts.Add("Aube dans le desert");
@@ -151,22 +188,22 @@ public class SimpleGrabSystem : MonoBehaviour
 
 
         // MOULIN/VESTIGES + BROUILLARD/PLUIE
-        if (choices[2] == 2 && choices[3] == 2)
+        if (choices[2] == 1 && choices[3] == 1)
         {
             selectedAudios.Add(audio2[0]);
             selectedTexts.Add("Des vestiges couvert de pluie");
         }
-        if (choices[2] == 1 && choices[3] == 2)
+        if (choices[2] == 0 && choices[3] == 1)
         {
             selectedAudios.Add(audio2[1]);
             selectedTexts.Add("Du moulin couvert de pluie");
         }
-        if (choices[2] == 1 && choices[3] == 1)
+        if (choices[2] == 0 && choices[3] == 0)
         {
             selectedAudios.Add(audio2[2]);
             selectedTexts.Add("Du moulin dans le brouillard");
         }
-        if (choices[2] == 2 && choices[3] == 1)
+        if (choices[2] == 1 && choices[3] == 0)
         {
             selectedAudios.Add(audio2[3]);
             selectedTexts.Add("Des vestiges dans le brouillard");
@@ -186,9 +223,6 @@ public class SimpleGrabSystem : MonoBehaviour
         }
 
 
-
-
-
         float sumLength = 0;
         float clipDelay = 0.5f;
 
@@ -198,7 +232,7 @@ public class SimpleGrabSystem : MonoBehaviour
             sumLength += (selectedAudios[i].length + clipDelay);
         }
 
-        Invoke("Reset", sumLength + 1f);
+        // Invoke("Reset", sumLength + 1f);
     }
 
 

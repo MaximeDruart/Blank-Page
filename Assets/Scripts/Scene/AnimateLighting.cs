@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
-using UnityEngine.Experimental.Rendering;
 using DG.Tweening;
 
 
@@ -27,6 +24,8 @@ public class AnimateLighting : MonoBehaviour
     PhysicallyBasedSky sky;
     ColorAdjustments colorAdjustments;
     WhiteBalance whiteBalance;
+
+    string timeChosen;
 
 
     void startNight()
@@ -182,6 +181,79 @@ public class AnimateLighting : MonoBehaviour
 
     }
 
+    void resetEffects()
+    {
+        Sequence sequence = DOTween.Sequence();
+
+        float startMult = sky.spaceEmissionMultiplier.value;
+        float targetSpaceMult = 0f;
+
+        sequence.Append(
+            DOTween.To(() => startMult, x => startMult = x, targetSpaceMult, 1.5f).OnUpdate(() =>
+            {
+                sky.spaceEmissionMultiplier.value = startMult;
+
+            })
+        );
+
+        sequence.Join(DOTween.To(() => colorAdjustments.saturation.value, x => colorAdjustments.saturation.value = x, -100, 2));
+
+        Color color = Color.white;
+
+        float greyValue = colorAdjustments.colorFilter.value.r;
+
+
+        sequence.Join(
+            DOTween.To(() => greyValue, x => greyValue = x, 1f, 2f).OnUpdate(() =>
+            {
+
+                color.r = greyValue;
+                color.g = greyValue;
+                color.b = greyValue;
+
+                colorAdjustments.colorFilter.value = color;
+
+            })
+        );
+
+        float startExpo = colorAdjustments.postExposure.value;
+
+        sequence.Join(DOTween.To(() => colorAdjustments.postExposure.value, x => colorAdjustments.postExposure.value = x, 0f, 2));
+
+
+        // ANIMATE TEMPERATURE
+        float targetTemperature = 0f;
+
+        sequence.Join(DOTween.To(() => whiteBalance.temperature.value, x => whiteBalance.temperature.value = x, targetTemperature, 3));
+
+
+        // ANIMATE DIRECTIONAL LIGHT INTENSITY
+        float targetIntensity = 52393.4f;
+        sequence.Join(DOTween.To(() => hdLight.intensity, x => hdLight.intensity = x, targetIntensity, 2));
+
+        // ANIMATE DIRECTIONAL LIGHT COLOR
+        float startKelvinColor = timeChosen == "NIGHT" ? 20000f : 6570f;
+        float targetKelvinColor = 8736f;
+        float k = startKelvinColor;
+
+        sequence.Join(
+            DOTween.To(() => k, x => k = x, targetKelvinColor, 2).OnUpdate(() =>
+            {
+                hdLight.SetColor(Color.white, k);
+            })
+        );
+
+
+        // ANIMATE SUN SIZE AND POS
+        float targetSunSize = 0f;
+        sequence.Join(DOTween.To(() => hdLight.angularDiameter, x => hdLight.angularDiameter = x, targetSunSize, 3));
+
+        Vector3 targetRotation = new Vector3(33.5f, 123.4f, 0f);
+        sequence.Join(baseLight.transform.DORotate(targetRotation, 2));
+
+        timeChosen = "null";
+
+    }
 
     void Start()
     {
@@ -212,7 +284,9 @@ public class AnimateLighting : MonoBehaviour
         dayEvent.onOpen += startDay;
         nightEvent.onOpen += startNight;
         rainEvent.onOpen += startRain;
+        baseEvent.onOpen += resetEffects;
     }
+
 
 
 

@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rainEvent: {fileID: 11400000, guid: 969dfe3a2babf0048a06819021cd6204, type: 2}
+  baseEvent: {fileID: 11400000, guid: bef4a6a8b15782f45af6e2010316e734, type: 2}
 --- !u!73398921 &3180188
 VFXRenderer:
   m_ObjectHideFlags: 2
@@ -430,6 +431,7 @@ MonoBehaviour:
   activeSceneIndex: 0
   choice: 0
   character: {fileID: 434851673}
+  prefabContainer: {fileID: 898587452}
   choiceHistory: 
 --- !u!4 &342743178
 Transform:
@@ -594,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478c9d2dc6b32cc4b85a0af0b565bc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseScene: {fileID: 11400000, guid: bef4a6a8b15782f45af6e2010316e734, type: 2}
   characterCamera: {fileID: 1713052915}
   slot: {fileID: 1297694456}
   audio1:
@@ -735,6 +738,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 434851677}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &898587452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898587453}
+  m_Layer: 0
+  m_Name: PrefabContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898587453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898587452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971477870
 GameObject:

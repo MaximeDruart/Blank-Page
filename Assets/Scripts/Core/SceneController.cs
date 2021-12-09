@@ -10,6 +10,7 @@ public class SceneController : Singleton<SceneController>
     public int choice = 0;
     public GameObject character;
 
+    public GameObject prefabContainer;
 
     public List<int> choiceHistory = new List<int>();
 

@@ -43,7 +43,9 @@ public class prefabLoader : MonoBehaviour
         GameObject prefab = prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice];
 
 
-        Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject instance = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+
+        instance.transform.SetParent(SceneController.Instance.prefabContainer.transform);
     }
 
 

@@ -269,11 +269,11 @@ PrefabInstance:
     - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: triggerData
       value: 
-      objectReference: {fileID: 11400000, guid: 4a2349fba6a61e24cb5cd08b8321e1ce, type: 2}
+      objectReference: {fileID: 11400000, guid: bc49b7d030be6554ba37a0447378a704, type: 2}
     - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: nextGameEvent
       value: 
-      objectReference: {fileID: 11400000, guid: c46fdf160a300094eb7edd0781c6c0c0, type: 2}
+      objectReference: {fileID: 11400000, guid: 969dfe3a2babf0048a06819021cd6204, type: 2}
     - target: {fileID: 3276313456814796923, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: activeGameEvent
       value: 

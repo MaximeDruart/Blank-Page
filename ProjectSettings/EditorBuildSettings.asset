@@ -14,18 +14,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Scene1-2.unity
-    guid: dcb17aacce1cf8a48baa4571c463e2d1
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Scene2-1.unity
-    guid: 08d8e56acc4f10c4dab5a2f8af6590ff
-  - enabled: 1
-    path: Assets/Scenes/Scene2-2.unity
-    guid: bb79bcf0156cb2645a760de8e9374443
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Scenefnazfiza.unity
     guid: a7ffe2c4dda88434184e175e8b08eafe
