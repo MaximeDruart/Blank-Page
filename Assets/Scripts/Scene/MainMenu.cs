@@ -11,6 +11,6 @@ public class MainMenu : MonoBehaviour
     {
         baseScene.open();
         SceneController.Instance.activeSceneIndex++;
-    }
+    }   
 
 }
