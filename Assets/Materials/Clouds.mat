@@ -22,10 +22,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Clouds
   m_Shader: {fileID: -6465566751694194690, guid: 03285dc6c6f274bb5a928a03e180d742, type: 3}
-  m_ShaderKeywords: _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: _DOUBLESIDED_ON _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
@@ -133,8 +133,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_0e3daccf50474501ac6474d7b8df834b: 0.01
-    - Vector1_a1b03eba8a8f4394a84420da5ac87f96: 5
-    - Vector1_b4dfb9381b4e454fbf2e8f30b23d4b7d: 20
+    - Vector1_1c951bdaaab94df898b6ae4ec4e47bdc: 0
+    - Vector1_500f31bb5ec84cf3bb48363a1798d7c3: 0.48
+    - Vector1_529317d1592f4b7ca5af7b565c7ac3c1: 0.27
+    - Vector1_5a307e6fd3464934b50f5cebd0435eef: -4.44
+    - Vector1_84c961a7bec5484eb8df73343a54c174: 0.02
+    - Vector1_85e64c4b6738490eb1e6aa31c27ff860: -5.05
+    - Vector1_a1b03eba8a8f4394a84420da5ac87f96: 4
+    - Vector1_b4dfb9381b4e454fbf2e8f30b23d4b7d: 3.47
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -152,8 +158,8 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _CoatMask: 0
-    - _CullMode: 2
-    - _CullModeForward: 2
+    - _CullMode: 0
+    - _CullModeForward: 0
     - _Cutoff: 0.5
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
@@ -164,7 +170,7 @@ Material:
     - _DisplacementLockObjectScale: 1
     - _DisplacementLockTilingScale: 1
     - _DisplacementMode: 0
-    - _DoubleSidedEnable: 0
+    - _DoubleSidedEnable: 1
     - _DoubleSidedNormalMode: 1
     - _DstBlend: 10
     - _EmissiveColorMode: 1
@@ -248,7 +254,10 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
+    - Color_7cec61950e744a66a7f6ebff8ec26c81: {r: 1, g: 1, b: 1, a: 0}
+    - Color_b0658cf523934cd2b7eb54b49bd0148d: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0}
     - Vector4_4d7c401967f543779dca10a8b4b77f0d: {r: 1, g: 0, b: 0, a: 90}
+    - Vector4_67565712880a4f58938dd20f87cb604f: {r: 0.16, g: 0, b: 0, a: 0.63}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
