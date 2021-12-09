@@ -175,6 +175,11 @@ public class AnimateLighting : MonoBehaviour
             })
         );
 
+        float startExpo = colorAdjustments.postExposure.value;
+
+        sequence.Join(DOTween.To(() => colorAdjustments.postExposure.value, x => colorAdjustments.postExposure.value = x, startExpo - 0.2f, 2));
+
+
     }
 
 
