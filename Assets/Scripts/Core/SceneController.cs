@@ -11,4 +11,6 @@ public class SceneController : Singleton<SceneController>
     public GameObject character;
 
 
+    public List<int> choiceHistory = new List<int>();
+
 }

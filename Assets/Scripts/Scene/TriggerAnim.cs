@@ -50,6 +50,8 @@ public class TriggerAnim : MonoBehaviour
         // choice should be 0 or 1
         SceneController.Instance.choice = choice - 1;
 
+        SceneController.Instance.choiceHistory.Add(choice - 1);
+
         nextGameEvent.open();
 
         SceneController.Instance.activeSceneIndex += 2;

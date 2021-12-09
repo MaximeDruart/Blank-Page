@@ -42,7 +42,6 @@ public class prefabLoader : MonoBehaviour
 
         GameObject prefab = prefabs[SceneController.Instance.activeSceneIndex + SceneController.Instance.choice];
 
-        Debug.Log("instantiating" + prefab.name);
 
         Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
     }
@@ -61,9 +60,6 @@ public class prefabLoader : MonoBehaviour
         GameObject[] prefabsTemp = { basePrefab, sceneOneOnePrefab, sceneOneTwoPrefab, sceneTwoOnePrefab, sceneTwoTwoPrefab, sceneThreeOnePrefab, sceneThreeTwoPrefab, sceneFourOnePrefab, sceneFourTwoPrefab, sceneFiveOnePrefab, sceneFiveTwoPrefab };
 
         prefabs.AddRange(prefabsTemp);
-
-        Debug.Log(gameEventsTemp.Length);
-        Debug.Log(prefabsTemp.Length);
 
         for (int i = 0; i < gameEventsTemp.Length; i++)
         {

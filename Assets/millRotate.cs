@@ -20,6 +20,5 @@ public class millRotate : MonoBehaviour
     {
         rotZ += Time.deltaTime * 8f;
         transform.localRotation = Quaternion.Euler(startRot.x, startRot.y, rotZ);
-        Debug.Log(rotZ);
     }
 }
