@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c050da031d4b0479d9677ee3fac31841
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bigilla
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3f779bbee91df984badfa9c944f8d5c1, type: 3}
+  - {fileID: 12800000, guid: 0c223937bc1dcb848bfdaa42c717e682, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

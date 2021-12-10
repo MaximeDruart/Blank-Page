@@ -26,7 +26,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scenefnazfiza.unity
     guid: a7ffe2c4dda88434184e175e8b08eafe
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: a44bd984cba414a43b852646ef427438
+  - enabled: 1
+    path: Assets/Scenes/SleepScene.unity
+    guid: d55c93e4260a5409db8fa47bf3f9f1fa
   m_configObjects: {}
