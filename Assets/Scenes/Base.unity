@@ -600,18 +600,18 @@ MonoBehaviour:
   characterCamera: {fileID: 1713052915}
   slot: {fileID: 1297694456}
   audio1:
-  - {fileID: 8300000, guid: eb5f749b217bc284da9e5c0c202d3c0d, type: 3}
-  - {fileID: 8300000, guid: ca01faae23a741d4da86f38e699c9d2b, type: 3}
-  - {fileID: 8300000, guid: a6f147b575d33dc4abd66859b725617c, type: 3}
-  - {fileID: 8300000, guid: af3f9e662071bd349a40df6f22d96703, type: 3}
+  - {fileID: 8300000, guid: 9d71067b3990d814c9dd2da587cfd807, type: 3}
+  - {fileID: 8300000, guid: 8a4a955582920e04fbeff5272213947f, type: 3}
+  - {fileID: 8300000, guid: d7fa10645d43def40b89eb0d6a6fe98f, type: 3}
+  - {fileID: 8300000, guid: 64e9ca31971dbd149b42334a85170475, type: 3}
   audio2:
-  - {fileID: 8300000, guid: 584e74bb4576d0b44a9214b16fe1ec98, type: 3}
-  - {fileID: 8300000, guid: 0127ac85df32b574ea7673d3edce0113, type: 3}
-  - {fileID: 8300000, guid: 8c06592fef710db49bffdfa211b40ccd, type: 3}
-  - {fileID: 8300000, guid: b190a31bf44bac14a91f4172f79de88a, type: 3}
+  - {fileID: 8300000, guid: 91356a300317fab4caff7bd5eb04481b, type: 3}
+  - {fileID: 8300000, guid: f9124510dc1d2b642a6a9f2e12563198, type: 3}
+  - {fileID: 8300000, guid: 385a24a1baa796f4192f729d16f57426, type: 3}
+  - {fileID: 8300000, guid: e10f13081f7792a408c03728033bc51e, type: 3}
   audio3:
-  - {fileID: 8300000, guid: b2e28062d19437a4ea719942df30832c, type: 3}
-  - {fileID: 8300000, guid: e5b8e149eecb0c646a003bbd1d601547, type: 3}
+  - {fileID: 8300000, guid: 9a42e5d023868064f8d1232d633b5245, type: 3}
+  - {fileID: 8300000, guid: ff511dee59e78a14aaca8e838ca47ca4, type: 3}
   audioSource: {fileID: 434851679}
 --- !u!82 &434851679
 AudioSource:

@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 
 public class TriggerAnim : MonoBehaviour
@@ -9,6 +10,7 @@ public class TriggerAnim : MonoBehaviour
     public GameEvent activeGameEvent;
     public GameEvent nextGameEvent;
     public Transform levelSelector;
+    public AudioSource nextAudio;
 
     public Transform lucioles;
 
@@ -30,6 +32,7 @@ public class TriggerAnim : MonoBehaviour
         objectCollider = GetComponent<Collider>();
 
         id = GetInstanceID();
+
     }
 
 
@@ -56,6 +59,8 @@ public class TriggerAnim : MonoBehaviour
 
         SceneController.Instance.activeSceneIndex += 2;
 
+        nextAudio.DOFade(0, 0.6f);
+
     }
 
 
@@ -69,7 +74,7 @@ public class TriggerAnim : MonoBehaviour
         {
             float distanceToCenter = Vector3.Distance(transform.position, SceneController.Instance.character.transform.position);
 
-            if (distanceToCenter < 5 && !isDisabled)
+            if (distanceToCenter < 8 && !isDisabled)
             {
                 isDisabled = true;
                 GoToNext();

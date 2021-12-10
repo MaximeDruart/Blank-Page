@@ -5141,9 +5141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e003601732d54b832c20215f43719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.502
   gameEvent: {fileID: 11400000, guid: ed9258e7d0dea0f498f38bce3d699083, type: 2}
-  doesAudioFade: 1
+  doesAudioFade: 0
   audioFadeVolume: 0
 --- !u!1 &8660047818237288540
 GameObject:
@@ -5412,10 +5412,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c3fd262775937764e98eccaf82d67fb5, type: 2}
+    - target: {fileID: 7956781126538041640, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054768818577623009, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 61e8ddd276e3eb34697c51203e62ce56, type: 3}
     - target: {fileID: 8810576187005052885, guid: 42281254872560445a35a2973b5fab4b, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8970739939832448463, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 61e8ddd276e3eb34697c51203e62ce56, type: 3}
     m_RemovedComponents:
     - {fileID: 8810576187005052885, guid: 42281254872560445a35a2973b5fab4b, type: 3}
     - {fileID: 7634522476371420667, guid: 42281254872560445a35a2973b5fab4b, type: 3}

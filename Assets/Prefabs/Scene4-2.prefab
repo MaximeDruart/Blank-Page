@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5e003601732d54b832c20215f43719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: 1
+  volume: 0.636
   gameEvent: {fileID: 11400000, guid: 969dfe3a2babf0048a06819021cd6204, type: 2}
   doesAudioFade: 0
   audioFadeVolume: 0
@@ -387,6 +387,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8054768818577623009, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78cacac3980fb424d888930e47df6dd4, type: 3}
+    - target: {fileID: 8970739939832448463, guid: 42281254872560445a35a2973b5fab4b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e926ae450b37eb54683b332a5448a13a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42281254872560445a35a2973b5fab4b, type: 3}
 --- !u!4 &1878299252479705100 stripped
